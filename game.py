@@ -33,7 +33,7 @@ def m_Move(v_box,h_g):
     if not data.v_repeat_stroke and v_box < 7: # Закончили в своей коробочке
         # Проверка на то, что закончили в пустой коробочке
         if  data.playfield[v_box] == 1 and h_g == 0:
-            data.playfield[data.n_m_Kalach] = data.playfield[data.n_m_Kalach] + 1 +
+            data.playfield[data.n_m_Kalach] = data.playfield[data.n_m_Kalach] + 1 
         
     
 
