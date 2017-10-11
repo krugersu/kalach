@@ -39,7 +39,11 @@ def m_Move(v_box,h_g):
         if  data.playfield[v_box] == 1 and h_g == 0 and data.playfield[data.map_box[v_box]] != 0:
             data.playfield[data.n_m_Kalach] = data.playfield[data.n_m_Kalach] + 1 + data.playfield[data.map_box[v_box]]
             data.playfield[v_box] = 0
-    data.w_step = 1        
+        if  data.playfield[v_box] == 1 and h_g == 1 and data.playfield[data.map_box[v_box]] != 0:
+            data.playfield[data.n_h_Kalach] = data.playfield[data.n_h_Kalach] + 1 + data.playfield[data.map_box[v_box]]
+            data.playfield[v_box] = 0            
+    if not data.v_repeat_stroke:
+        data.w_step = 1 if data.w_step == 0 else 1      
     
 
 def m_HumanMove(n_Box):
@@ -49,4 +53,12 @@ def m_FirstMove():
     pass
 
 def m_analis(): 
-    pass
+    
+    # Проверить можно ли повторить ход
+    x = 5
+    while x != 0:
+        v_box += 1
+        
+        data.playfield[v_box] += 1
+        x -= 1    
+    
